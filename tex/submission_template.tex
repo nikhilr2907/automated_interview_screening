@@ -1,0 +1,122 @@
+\documentclass[a4paper, 11pt]{article}
+
+% --- Standard Packages ---
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{amsmath, amssymb}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{subcaption}
+
+% --- Header and Footer Setup ---
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{Ethics, Fairness and Explanation in AI (70076) @ Imperial College London}
+\rhead{January 2026}
+\cfoot{\thepage}
+
+% --- Section Formatting ---
+\titleformat{\section}{\normalfont\Large\bfseries}{\thesection.}{1em}{}
+\titleformat{\subsection}{\normalfont\large\bfseries}{\thesubsection.}{1em}{}
+
+% --- Submission Title ---
+\newcommand{\assignmenttitle}[2]{
+    \begin{center}
+        \LARGE\textbf{#1} \\
+        \vspace{0.5em}
+        \large #2
+    \end{center}
+    \vspace{1em}
+}
+
+\begin{document}
+
+\assignmenttitle{Coursework Report: Automated Interview Screening}{Student Name: [Insert Name]\\ CID: [Insert Number]}
+
+\section{Task 1: Feature Selection and Measurement Critique}
+% Provide your narrative justification for feature selection here. 
+% Focus on the principles of measurement theory: reliability and validity. 
+% Discuss the validity of using proxy measurements like ZIP codes or grammar choices.
+
+\section{Task 2: Fairness Metric Selection}
+% Justify your choice of Demographic Parity, Equalized Opportunity, or Equalized Odds. 
+% Discuss how your choice prevents allocative harm and addresses the distribution of errors.
+
+\section{Task 3: Baseline Model Comparison}
+% Report the performance and fairness metrics for your baseline models.
+\begin{table}[h]
+\centering
+\begin{tabular}{lccc}
+\toprule
+\textbf{Model} & \textbf{Accuracy} & \textbf{AUC} & \textbf{Fairness Metric Value} \\ 
+\midrule
+Logistic Regression & & & \\ 
+Decision Tree       & & & \\ 
+Neural Network      & & & \\ 
+\bottomrule
+\end{tabular}
+\caption{Performance and Fairness Comparison of Baseline Models}
+\end{table}
+
+% Receiver Operating Characteristic (ROC) curve comparison for baseline models.
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \fbox{\parbox[c][5cm]{\linewidth}{\centering ROC: Logistic Regression}}
+        \caption{Logistic Regression}
+        \label{fig:roc_lr}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \fbox{\parbox[c][5cm]{\linewidth}{\centering ROC: Decision Tree}}
+        \caption{Decision Tree}
+        \label{fig:roc_dt}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \fbox{\parbox[c][5cm]{\linewidth}{\centering ROC: Neural Network}}
+        \caption{Neural Network}
+        \label{fig:roc_nn}
+    \end{subfigure}
+    \caption{Side-by-side ROC curve comparison for baseline models.}
+    \label{fig:baseline_roc}
+\end{figure}
+
+\section{Task 4: Mitigating Bias}
+% Select your best model from Task 3 and report the impact of your interventions.
+\begin{table}[h]
+\centering
+\begin{tabular}{lccc}
+\toprule
+\textbf{Configuration} & \textbf{Accuracy} & \textbf{AUC} & \textbf{Fairness Metric Value} \\ 
+\midrule
+Baseline (No Mitigation) & & & \\ 
+Pre-processing (Re-weighing) & & & \\ 
+Post-processing (Thresholding) & & & \\ 
+\bottomrule
+\end{tabular}
+\caption{Impact of Mitigation Strategies on Performance and Fairness}
+\end{table}
+
+% Describe the fairness-accuracy trade-offs observed during mitigation.
+
+\section{Task 5: Reflection and Analysis}
+\subsection*{Final Recommendation}
+% Which model and mitigation strategy should the firm deploy, and why?
+
+\subsection*{Legitimacy}
+% Discuss the moral justifiability of using this automated tool.
+
+\subsection*{Resource Constraints (Top-N Selection)}
+% Discuss the unaddressed reality of resource constraints: in a scenario where only 100 
+% slots are available, how does a Top-N selection process differ from binary thresholding?
+
+\end{document}
